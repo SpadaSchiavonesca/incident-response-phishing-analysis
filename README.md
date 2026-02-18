@@ -47,6 +47,11 @@ Access the formal audit trail through the following phases:
 ---
 
 ## 👤 Professional Connectivity
-**Nenad Uzelac** *GRC and IT Audit*
-[![LinkedIn Profile](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nenaduzelac/)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpadaSchiavonesca)
+
+**Nenad Uzelac**  
+*GRC Analyst | IT Audit Professional | Cybersecurity Researcher*
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nenad_Uzelac-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nenaduzelac/)
+[![GitHub](https://img.shields.io/badge/GitHub-SpadaSchiavonesca-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpadaSchiavonesca)
