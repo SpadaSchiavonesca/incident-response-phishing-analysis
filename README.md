@@ -1,7 +1,7 @@
 # 🛡️ Governance, Risk, & Compliance (GRC) | Incident Case Study
 **Project:** Targeted Identity-Mirroring & Infrastructure Forensics  
 **Frameworks:** NIST SP 800-61, NIST CSF, MITRE ATT&CK®, ISO/IEC 27001  
-**Investigator:** [Nenad Uzelac](https://www.linkedin.com/in/uzelac-nenad/)
+**Investigator:** [Nenad Uzelac]((https://www.linkedin.com/in/nenaduzelac/))
 
 ---
 
@@ -47,4 +47,4 @@ Access the formal audit trail through the following phases:
 ---
 
 ## 👤 Professional Connectivity
-**Nenad Uzelac** *GRC and IT Audit Professional* [LinkedIn Profile](https://www.linkedin.com/in/uzelac-nenad/) | [GitHub Portfolio](https://github.com/SpadaSchiavonesca)
+**Nenad Uzelac** *GRC and IT Audit Professional* [LinkedIn Profile](https://www.linkedin.com/in/nenaduzelac/) | [GitHub Portfolio](https://github.com/SpadaSchiavonesca)
