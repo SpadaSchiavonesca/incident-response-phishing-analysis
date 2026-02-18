@@ -1,23 +1,67 @@
-# 🔍 Control Gap Analysis: Case 2026-02-17-SEC-01
+# 🔍 Gap Analysis: Control Effectiveness & Vulnerability Assessment
 
-## 1. Technical Control Gaps (Protocol Bypass)
-| Control | Status | Gap Observed |
-| :--- | :--- | :--- |
-| **SPF/DKIM/DMARC** | **FAIL (Policy Bypass)** | The adversary successfully authenticated their own infrastructure. The gateway prioritized technical validity over sender reputation. |
-| **Email Gateway Filtering** | **FAIL** | Use of "Bayesian Poisoning" (hidden prose) successfully lowered the spam score below quarantine thresholds. |
-| **URL Reputation** | **FAIL** | Payload hosted on `storage.googleapis.com` leveraged inherent trust of a major CSP to bypass blocklists. |
+> **Incident Ref:** `2026-02-17-SEC-01` &nbsp;|&nbsp; **Status:** `Finalized` &nbsp;|&nbsp; **Classification:** `Internal`
 
-## 2. Deception Analysis: The "Unsubscribe" Trap
-**Observation:** The artifact included a functional "Unsubscribe" link (`hxxps://hsmpllt.com/...`).
+---
 
-**Auditor Analysis:** - **Active Target Validation (ATV):** Attackers use these links as a "heartbeat" signal. Clicking confirms the email address is **active and monitored**, increasing its value for future targeted spear-phishing.
-- **Compliance Exploitation:** The attacker exploited the user's expectation of **GDPR/CAN-SPAM** compliance to build a false sense of legitimacy.
+## 1. Control Effectiveness Summary
 
-## 3. Scraped Identity Injection
-**Observation:** The adversary utilized a portion of the recipient's email handle (`[REDACTED]`) in the sender field.
+This section evaluates the performance of the technical security stack against the specific adversarial tactics identified during the investigation.
 
-**Auditor Analysis:** This marks a transition from "Mass Phishing" to **Targeted Identity Spoofing**. By mirroring a unique personal identifier, the attacker bypassed the "Stranger-Danger" heuristic. This indicates PII was scraped from public-facing metadata.
+| Control Identifier | Control Name | Status | Audit Finding |
+|---|---|---|---|
+| `NIST AC-04` | Email Authentication | 🔴 **INADEQUATE** | RFC-compliant SPF/DKIM/DMARC signatures were present on the malicious domain, successfully neutralizing reputation-based gateway filters. |
+| `NIST SC-07` | Boundary Protection | 🟠 **BYPASSED** | Adversary utilized "Living off the Land" (LotL) tactics via `storage.googleapis.com` to leverage high-reputation CSP infrastructure and bypass domain blacklists. |
+| `NIST SI-08` | Spam/Phishing Detection | 🟠 **BYPASSED** | "Bayesian Poisoning" (large blocks of legitimate prose) was used to dilute the spam-probability scoring of the content engine. |
 
-## 4. Remediation Recommendations
-- **Technical:** Deploy AI-based anomaly detection to flag "Look-alike" sender handles.
-- **Administrative:** Update Security Awareness Training (SAT) to specifically address "Unsubscribe" links as reconnaissance vectors.
+
+
+---
+
+## 2. Behavioral Analysis: The "Unsubscribe" Reconnaissance Loop
+
+A high-priority finding was the inclusion of a functional "Unsubscribe" mechanism (`hxxps://hsmpllt[.]com/...`).
+
+> **⚠️ Auditor's Note — Active Target Validation (ATV)**
+>
+> In a targeted campaign, the "Unsubscribe" link is **not** a compliance feature; it is an **active heartbeat monitor**. Clicking this link confirms the recipient handle is valid, monitored, and reactive.
+
+* **Data Enrichment:** Interaction signals to the adversary that the PII associated with this handle has a high "Return on Investment" (ROI), likely triggering secondary, high-sophistication spear-phishing attempts.
+* **Regulatory Masquerade:** The adversary intentionally exploited the user's expectation of CAN-SPAM/GDPR compliance to mask a reconnaissance operation as a legitimate administrative function.
+
+---
+
+## 3. Vulnerability Root Cause: Identity Mirroring
+
+The adversary demonstrated a transition from opportunistic phishing to **Targeted Identity Spoofing**.
+
+* **The Injection:** The attacker programmatically scraped the unique identifier `[REDACTED]` and injected it into the `Envelope-From`, `Display Name`, and `List-ID` fields.
+* **Root Cause:** PII exposure in public-facing metadata provided the "seed data" for this automation.
+* **Impact:** This bypasses the Cognitive Heuristic of *"Stranger Danger,"* as the user sees a familiar personal identifier associated with the threat.
+
+---
+
+## 4. Corrective Action Plan (CAP)
+
+Based on the identified gaps, the following remediation is mandated to align with **NIST CSF (Detect/Protect)**:
+
+| Priority | Domain | Action |
+|---|---|---|
+| 🔴 High | **Administrative** | Transition all public-facing contact metadata to an Authenticated Identity Gateway (LinkedIn Vanity URL). |
+| 🔴 High | **Technical** | Enforce FIDO2/WebAuthn hardware tokens to negate the utility of successfully harvested credentials. |
+| 🟡 Medium | **UAT (Awareness)** | Update User Awareness Training specifically on the "Unsubscribe Reconnaissance" vector and identity-mirroring detection. |
+
+---
+
+<details>
+<summary>📋 Document Metadata</summary>
+
+| Field | Value |
+|---|---|
+| Incident Reference | `2026-02-17-SEC-01` |
+| Report Status | Finalized |
+| Classification | Internal |
+| Frameworks Referenced | NIST SP 800-53, NIST CSF, CAN-SPAM, GDPR |
+| Last Updated | 2026-02-18 |
+
+</details>
