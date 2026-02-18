@@ -18,7 +18,7 @@ This repository documents a high-sophistication, targeted phishing campaign (Inc
 ## 📂 Investigative Lifecycle & Documentation
 Access the formal audit trail through the following phases:
 
-### 📑 [Phase 1: Forensic Artifact Collection](evidence/sanitized_headers.txt)
+### 📑 [Phase 1: Forensic Artifact Collection](./evidence/raw_headers.txt)
 * **Metadata Analysis:** Sanitized SMTP headers documenting the anomalous routing path (US -> UA -> BR).
 * **Infrastructure Trace:** Tracing the origin to a DigitalOcean node via a compromised Brazilian educational relay.
 
