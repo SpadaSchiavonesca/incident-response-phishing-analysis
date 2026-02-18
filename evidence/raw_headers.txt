@@ -1,0 +1,33 @@
+========================================================================
+SECURITY INCIDENT ARTIFACT: SANITIZED SMTP HEADERS
+CASE ID: 2026-02-17-SEC-01
+STATUS: MALICIOUS (PHISHING / CREDENTIAL HARVESTING)
+========================================================================
+
+--- MESSAGE IDENTIFIERS ---
+Message ID:      <55965-[REDACTED]@TPwTr1c.yoq>
+Created At:      Tue, Feb 17, 2026, 6:29 PM
+Subject:         We've Blocked Your Account! [Data Deletion Threat]
+Threat Window:   7 Hours (Urgency Social Engineering)
+
+--- ROUTING & INFRASTRUCTURE ---
+From:            [REDACTED] <alert-4825@og17i.mail.one.ass0023.canyona.biz.ua>
+To:              [REDACTED_USER]@og17i.yy
+Origin IP:       50.2.36.41 (DigitalOcean - USA)
+Sender Domain:   canyona.biz.ua (Ukraine TLD)
+Relay Server:    anhanguera.com (Compromised Brazilian University Infrastructure)
+
+--- AUTHENTICATION AUDIT (TECHNICAL CONTROLS) ---
+SPF:             PASS (Origin IP 50.2.36.41 authorized by DNS)
+DKIM:            PASS (Cryptographic signature verified for sender domain)
+DMARC:           PASS (Alignment confirmed between From and DKIM domains)
+
+--- AUDITOR NOTES ---
+1. DYNAMIC IDENTITY INJECTION: The adversary programmatically scraped 
+   the handle "[REDACTED]" and mirrored it in the "From" display name
+   to bypass human 'stranger-danger' heuristics.
+   
+2. PROTOCOL EXPLOITATION: The "PASS" results for SPF/DKIM/DMARC indicate 
+   a technically mature adversary with established DNS infrastructure. 
+   Traditional reputation-based filters are ineffective against this vector.
+========================================================================
