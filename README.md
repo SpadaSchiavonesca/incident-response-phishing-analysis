@@ -63,6 +63,8 @@ Access the formal audit trail through the following phases:
 
 ## 📄 License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
 
-> This project is licensed under the **MIT License** - see the [`LICENSE`](LICENSE) file for details.
+> This project is licensed under the **MIT License** - click the badge above to view the full audit terms in the `LICENSE` file.
+
+
