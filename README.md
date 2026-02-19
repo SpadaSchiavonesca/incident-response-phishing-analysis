@@ -36,13 +36,14 @@ Access the formal audit trail through the following phases:
 
 ---
 
-## 🛠️ Standards & Compliance Mapping
-| Domain | Standard / Framework |
-| :--- | :--- |
-| **Incident Handling** | NIST SP 800-61 Rev. 2 |
-| **Adversary Tactics** | MITRE ATT&CK® |
-| **Risk Management** | NIST SP 800-30 |
-| **Regulatory Privacy** | CAN-SPAM / GDPR (Compliance Exploitation) |
+## 🛠️ Investigation Toolbox & Skills
+
+| **Category** | **Tools & Techniques** |
+|--------------|------------------------|
+| **🔍 Forensics** | SMTP Header Analysis, WHOIS Research, IP Geolocation |
+| **⚖️ Risk Management** | NIST SP 800-30 Qualitative Assessment, Risk Matrix Modeling |
+| **📋 Compliance** | NIST CSF Mapping, GDPR & CAN-SPAM Regulatory Review |
+| **🛡️ Security Ops** | Phishing Triage, Email Gateway Bypass Analysis (SPF/DKIM/DMARC) |
 
 ---
 
@@ -57,3 +58,11 @@ Access the formal audit trail through the following phases:
 [![GitHub](https://img.shields.io/badge/GitHub-SpadaSchiavonesca-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpadaSchiavonesca)
 
 </div>
+
+---
+
+## 📄 License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+> This project is licensed under the **MIT License** - see the [`LICENSE`](LICENSE) file for details.
