@@ -55,3 +55,5 @@ Access the formal audit trail through the following phases:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nenad_Uzelac-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nenaduzelac/)
 [![GitHub](https://img.shields.io/badge/GitHub-SpadaSchiavonesca-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SpadaSchiavonesca)
+
+</div>
