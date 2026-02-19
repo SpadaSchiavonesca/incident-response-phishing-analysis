@@ -36,14 +36,22 @@ Access the formal audit trail through the following phases:
 
 ---
 
-## 🛠️ Investigation Toolbox & Skills
+## 🛠️ Technical Toolbox & Automation
 
-| **Category** | **Tools & Techniques** |
-|--------------|------------------------|
+| **Category** | **Tools, Frameworks & Automation** |
+|--------------|------------------------------------|
 | **🔍 Forensics** | SMTP Header Analysis, WHOIS Research, IP Geolocation |
-| **⚖️ Risk Management** | NIST SP 800-30 Qualitative Assessment, Risk Matrix Modeling |
-| **📋 Compliance** | NIST CSF Mapping, GDPR & CAN-SPAM Regulatory Review |
-| **🛡️ Security Ops** | Phishing Triage, Email Gateway Bypass Analysis (SPF/DKIM/DMARC) |
+| **⚖️ Risk & GRC** | NIST SP 800-30 & 800-61, NIST CSF, MITRE ATT&CK® |
+| **🐍 Python** | `tools/forensic_sim.py` — Automated "Triple Pass" & Routing Detection |
+| **🐚 Bash** | `tools/log_triage.sh` — Automated IoC Hunting for `humplt.com` |
+
+### 🚀 Execution Instructions
+To maintain technical transparency, these scripts allow for the programmatic validation of the manual findings documented in this audit.
+
+> **Note:** Ensure you have Python installed and access to a terminal (Bash/Git Bash).
+
+* **Python Forensic Sim:** Run `python tools/forensic_sim.py`. Expect a `CRITICAL` alert if malicious headers are detected.
+* **Bash Log Triage:** Run `bash tools/log_triage.sh`. This scans local logs for the Active Target Validation (ATV) domain identified in the trace.
 
 ---
 
