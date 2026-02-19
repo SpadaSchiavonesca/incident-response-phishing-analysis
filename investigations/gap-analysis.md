@@ -38,6 +38,18 @@ The adversary demonstrated a transition from opportunistic phishing to **Targete
 * **The Injection:** The attacker programmatically scraped the unique identifier `[REDACTED]` and injected it into the `Envelope-From`, `Display Name`, and `List-ID` fields.
 * **Root Cause:** PII exposure in public-facing metadata provided the "seed data" for this automation.
 * **Impact:** This bypasses the Cognitive Heuristic of *"Stranger Danger,"* as the user sees a familiar personal identifier associated with the threat.
+  
+
+### 📸 Forensic Evidence (Sanitized)
+To validate the technical maturity of the adversary, I performed a manual review of the primary artifacts.
+
+**Figure 1: Email Inbox View (Social Engineering & Urgency)**
+![Sanitized Inbox View](https://raw.githubusercontent.com/SpadaSchiavonesca/incident-response-phishing-analysis/main/evidence/evidence-inbox-sanitized.png)
+*Observation: The subject line utilizes high-pressure tactics (7-hour deadline) to force user execution.*
+
+**Figure 2: Authentication Results (Technical Control Bypass)**
+![Sanitized Header View](https://raw.githubusercontent.com/SpadaSchiavonesca/incident-response-phishing-analysis/main/evidence/evidence-headers-auth-pass.png)
+*Observation: Critical email authentication controls (SPF, DKIM, and DMARC) all returned a PASS status.*
 
 ---
 
